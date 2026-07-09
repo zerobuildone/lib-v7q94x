@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>仮想マダム芦屋会 特典ライブラリ</title>
+<style>
+:root{--accent:#7c4a8e;--accent-deep:#5a2f6b;--bg:#faf7fb;--card:#ffffff;--text:#2b2030;
+--muted:#83718c;--border:#e5d8ea;--shadow:0 1px 4px rgba(60,30,70,.08);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:17px;}
+body{background:var(--bg);color:var(--text);line-height:1.95;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;}
+.wrap{max-width:680px;margin:0 auto;padding:0 18px 64px;}
+header.site{text-align:center;padding:26px 0 18px;border-bottom:2px solid var(--accent);margin-bottom:8px;}
+header.site h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:1.4rem;
+color:var(--accent-deep);letter-spacing:.14em;}
+header.site p{color:var(--muted);font-size:.82rem;margin-top:4px;letter-spacing:.1em;}
+a{color:var(--accent-deep);}
+.lead{color:var(--muted);font-size:.92rem;margin:20px 2px 6px;}
+.month{font-size:.95rem;color:var(--accent-deep);margin:26px 2px 4px;font-weight:bold;
+border-left:4px solid var(--accent);padding-left:10px;}
+.card{display:block;background:var(--card);border:1px solid var(--border);border-radius:12px;
+padding:18px 20px;margin:12px 0;text-decoration:none;box-shadow:var(--shadow);}
+a.card:active{background:#f6ecf9;}
+.card .date{color:var(--muted);font-size:.8rem;letter-spacing:.06em;}
+.card h2{color:var(--text);font-size:1.12rem;margin:6px 0 6px;line-height:1.6;}
+.card .video{color:var(--muted);font-size:.84rem;display:block;}
+.badge{display:inline-block;font-size:.74rem;font-weight:bold;padding:3px 12px;border-radius:999px;
+margin-left:8px;vertical-align:middle;}
+.badge.live{background:#e7f3dd;color:#3c6b1d;}
+.badge.closed{background:#ececec;color:#8a8a8a;}
+.badge.limited{background:#fdeeca;color:#93610a;}
+.badge.locked{background:#e8e9f5;color:#4a4f8c;}
+article h1{color:var(--accent-deep);font-size:1.35rem;margin:26px 0 8px;line-height:1.6;
+font-family:"Hiragino Mincho ProN","Yu Mincho",serif;}
+article h2{color:var(--accent-deep);font-size:1.1rem;margin:32px 0 12px;
+border-left:4px solid var(--accent);padding-left:12px;}
+article p{margin:14px 0;}
+article hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+article table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem;background:var(--card);}
+article th,article td{border:1px solid var(--border);padding:10px 12px;text-align:left;}
+article th{background:#f1e6f5;color:var(--accent-deep);}
+.check{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--accent);
+border-radius:10px;padding:16px 18px;margin:14px 0;box-shadow:var(--shadow);}
+.check p{margin:0;}
+.meta{color:var(--muted);font-size:.8rem;margin-top:6px;}
+.back{display:inline-block;margin:30px 0 0;color:var(--muted);font-size:.9rem;}
+.lockbox{background:var(--card);border:2px dashed var(--accent);border-radius:14px;
+text-align:center;padding:44px 22px;margin:30px 0;}
+.lockbox .lockicon{font-size:2.4rem;}
+.lockbox p{margin:12px 0 0;font-size:1.02rem;}
+.lockbox .cd{color:var(--accent-deep);font-weight:bold;font-size:1.05rem;margin-top:8px;}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--border);
+color:var(--muted);font-size:.76rem;text-align:center;letter-spacing:.05em;}
+</style>
+</head><body><div class="wrap">
+<header class="site"><h1>💎 仮想マダム芦屋会</h1><p>会員限定・特典ライブラリ</p></header>
+<p class="lead" id="lead">現在 2 個の贈り物（受取可能 2 個）。新しい動画のたびに増えるわよ。</p><section class="mgroup"><div class="month">2026年7月</div><a class="card" href="tokuten/2026-07-09.html"><span class="date">2026-07-09</span><span class="badge live">常設</span><h2>🎁 含み損の夜に開く1枚</h2><span class="video">動画: 入会プレゼント（常設・登録した瞬間に受け取れる1枚）</span></a><a class="card" href="tokuten/2026-07-08.html"><span class="date">2026-07-08</span><span class="badge live">配布中</span><h2>🎁 10月開業までの観測カード（DTCC×XRPの予定表）</h2><span class="video">動画: XRP（リップル）が上がらない本当の理由。ウォール街の中枢DTCCが7月始動</span></a></section>
+<script>
+function refresh(){
+  var n=Date.now(),changed=false;
+  document.querySelectorAll('[data-pub]').forEach(function(el){
+    if(el.hidden && n>=Number(el.getAttribute('data-pub'))){el.hidden=false;changed=true;}
+  });
+  document.querySelectorAll('.mgroup').forEach(function(g){
+    var any=false;
+    g.querySelectorAll('.card').forEach(function(c){if(!c.hidden)any=true;});
+    g.hidden=!any;
+  });
+  var total=0,avail=0;
+  document.querySelectorAll('.card').forEach(function(c){
+    if(c.hidden)return;
+    total++;
+    if(c.getAttribute('data-closed')!=='1')avail++;
+  });
+  var lead=document.getElementById('lead');
+  if(lead)lead.textContent='現在 '+total+' 個の贈り物（受取可能 '+avail+' 個）。新しい動画のたびに増えるわよ。';
+  setTimeout(refresh,30000);
+}
+refresh();
+</script><footer>このページは仮想マダム芦屋会（公式LINE）の会員限定よ。URLの転載はしないでちょうだい。<br>
+投資判断はあんた自身の責任で。特定商品の売買を勧めるものじゃないわ。</footer>
+</div></body></html>
