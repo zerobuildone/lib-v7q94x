@@ -56,29 +56,34 @@ color:var(--muted);font-size:.76rem;text-align:center;letter-spacing:.05em;}
 </style>
 </head><body><div class="wrap">
 <header class="site"><h1>💎 仮想マダム芦屋会</h1><p>会員限定・特典ライブラリ</p></header>
-<p class="lead" id="lead">現在 2 個の贈り物（受取可能 2 個）。新しい動画のたびに増えるわよ。</p><section class="mgroup"><div class="month">2026年7月</div><a class="card" href="tokuten/2026-07-15.html" data-pub="1784062800000" hidden><span class="date">2026-07-15</span><span class="badge live">配布中</span><h2>🎁 上がる前に点く、3つの合図カード</h2><span class="video">動画: XRP（リップル）いつ上がる？廃業寸前の告白と、3つの合図</span></a><a class="card" href="tokuten/2026-07-09.html"><span class="date">2026-07-09</span><span class="badge live">常設</span><h2>🎁 含み損の夜に開く1枚</h2><span class="video">動画: 入会プレゼント（常設・登録した瞬間に受け取れる1枚）</span></a><a class="card" href="tokuten/2026-07-08.html"><span class="date">2026-07-08</span><span class="badge live">配布中</span><h2>🎁 10月開業までの観測カード（DTCC×XRPの予定表）</h2><span class="video">動画: XRP（リップル）が上がらない本当の理由。ウォール街の中枢DTCCが7月始動</span></a></section>
+<div class="lockbox" id="locked"><p>このページには、まだ何もないわよ。</p><p><a href="../index.html">← 一覧へ戻りなさい</a></p></div><div id="content" hidden><article><h1>🎁 上がる前に点く、3つの合図カード</h1><p class="meta">2026-07-15 ｜ 対象動画: XRP（リップル）いつ上がる？廃業寸前の告白と、3つの合図 <span class="badge live">配布中</span></p><p>いつ上がるの、って夜中に検索するのは今日でおしまい。<br>見るべき合図は3つだけ。この1枚を貼っておきなさい。</p>
+<hr>
+<h2>🔔 上がる前に点く、3つの合図</h2>
+<div class="check"><p><b>□ 合図1. 値段の合図: 1ドル17〜20セントの帯</b><br>1年続いた下り坂の、転換ラインがここ。<br>取り返すだけじゃダメよ。<b>週足で守れたか</b>まで見るの。<br>ここを固めたら、景色が変わり始めた合図。</p></div>
+<div class="check"><p><b>□ 合図2. 相方の合図: イーサリアムとビットコインの力関係</b><br>アルト全体の号令は、いつも先頭ランナーから。<br>その力関係が11カ月ぶりに下り坂の線を上抜けようとしてるわ。<br>これが<b>数週間つづく本物の転換</b>になるかどうか。</p></div>
+<div class="check"><p><b>□ 合図3. 市場の合図: アルトシーズン指数75超え</b><br>上位50銘柄のうち何%がビットコインに勝ってるかの目盛りよ。<br>祭りの判定ラインは<b>75</b>。いまはまだ<b>43</b>。<br>つまり祭りは始まってない＝乗り遅れてもいないってこと。</p></div>
+<hr>
+<h2>🛡️ 下の心得（合図が点く前に、床が試された時用）</h2>
+<div class="check"><p><b>□ 1ドルの床の攻防は、想定内</b><br>仮に床が割れても、下の80セント台までは注文の薄い空白地帯。<br>90セント台まで売り尽くして底が固まる筋書きを言う分析家もいるわ。<br>そこまで行っても、終わりの合図じゃない。<b>ふるい落としの最終工程</b>よ。<br>慌てて投げた人から、順番に退場させられるんだから。</p></div>
+<hr>
+<h2>💡 このカードの使い方</h2>
+<p>毎晩チャートとにらめっこするのをやめて、<b>週1回、上の3つだけ</b>確認する。<br>合図が点いたら、あたしの動画とLINEレポートで答え合わせ。<br>3つ揃うまでは、あんたは自分の生活を生きてなさい。</p>
+<p>覚えておきなさい。リップルは一度、会社を畳む寸前まで行って、<br>それでも4年戦って勝った会社よ。<br>握って耐えてきたあんたの9年は、その物語の一部なの。</p>
+<hr>
+<p>⚠️ この資料は情報提供が目的で、特定の金融商品の売買を勧めるものじゃないわ。<br>水準や指数は作成時点の情報で、見立ては外れる可能性がある。投資判断はあんた自身の責任で。</p>
+<p>— クリプト芦屋マダム</p></article><a class="back" href="../index.html">← 特典ライブラリ一覧へ</a></div>
 <script>
-function refresh(){
-  var n=Date.now(),changed=false;
-  document.querySelectorAll('[data-pub]').forEach(function(el){
-    if(el.hidden && n>=Number(el.getAttribute('data-pub'))){el.hidden=false;changed=true;}
-  });
-  document.querySelectorAll('.mgroup').forEach(function(g){
-    var any=false;
-    g.querySelectorAll('.card').forEach(function(c){if(!c.hidden)any=true;});
-    g.hidden=!any;
-  });
-  var total=0,avail=0;
-  document.querySelectorAll('.card').forEach(function(c){
-    if(c.hidden)return;
-    total++;
-    if(c.getAttribute('data-closed')!=='1')avail++;
-  });
-  var lead=document.getElementById('lead');
-  if(lead)lead.textContent='現在 '+total+' 個の贈り物（受取可能 '+avail+' 個）。新しい動画のたびに増えるわよ。';
-  setTimeout(refresh,30000);
+var T=1784062800000;
+var PV=new URLSearchParams(location.search).get('pv')==='4871';
+function tick(){
+  if(PV||Date.now()>=T){
+    document.getElementById('locked').hidden=true;
+    document.getElementById('content').hidden=false;
+  }else{
+    setTimeout(tick,30000);
+  }
 }
-refresh();
+tick();
 </script><footer>このページは仮想マダム芦屋会（公式LINE）の会員限定よ。URLの転載はしないでちょうだい。<br>
 投資判断はあんた自身の責任で。特定商品の売買を勧めるものじゃないわ。</footer>
 </div></body></html>
