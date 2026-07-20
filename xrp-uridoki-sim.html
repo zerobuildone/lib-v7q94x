@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>XRP売り時シミュレーター | 仮想マダム芦屋会</title>
+<style>
+:root{--accent:#7c4a8e;--accent-deep:#5a2f6b;--bg:#faf7fb;--card:#ffffff;--text:#2b2030;
+--muted:#83718c;--border:#e5d8ea;--gold:#8a6d1d;--goldbg:#fdf6e0;--shadow:0 1px 4px rgba(60,30,70,.08);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:17px;}
+body{background:var(--bg);color:var(--text);line-height:1.85;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px 64px;}
+header.site{text-align:center;padding:26px 0 18px;border-bottom:2px solid var(--accent);margin-bottom:8px;}
+header.site h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:1.4rem;
+color:var(--accent-deep);letter-spacing:.14em;}
+header.site p{color:var(--muted);font-size:.82rem;margin-top:4px;letter-spacing:.1em;}
+a{color:var(--accent-deep);}
+h1.tool{color:var(--accent-deep);font-size:1.35rem;margin:24px 0 6px;line-height:1.6;
+font-family:"Hiragino Mincho ProN","Yu Mincho",serif;}
+.lead{color:var(--muted);font-size:.95rem;margin:6px 0 18px;}
+h2{color:var(--accent-deep);font-size:1.1rem;margin:30px 0 12px;
+border-left:4px solid var(--accent);padding-left:12px;}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:12px;
+padding:18px;margin:12px 0;box-shadow:var(--shadow);}
+label{display:block;font-weight:bold;font-size:1rem;margin:10px 0 4px;}
+label small{font-weight:normal;color:var(--muted);}
+input[type=text]{width:100%;font-size:1.5rem;padding:12px 14px;border:2px solid var(--border);
+border-radius:10px;background:#fff;color:var(--text);}
+input[type=text]:focus{outline:none;border-color:var(--accent);}
+.btn{display:block;width:100%;font-size:1.25rem;font-weight:bold;padding:14px;margin-top:16px;
+background:var(--accent-deep);color:#fff;border:none;border-radius:12px;cursor:pointer;}
+.btn:active{background:var(--accent);}
+.now{font-size:.92rem;color:var(--muted);margin-top:10px;}
+.now b{color:var(--text);font-size:1.05rem;}
+.stat{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 2px;}
+.stat div{flex:1 1 30%;min-width:130px;background:var(--card);border:1px solid var(--border);
+border-radius:10px;padding:10px 12px;text-align:center;}
+.stat .k{font-size:.8rem;color:var(--muted);}
+.stat .v{font-size:1.2rem;font-weight:bold;line-height:1.4;}
+.minus{color:#a0303a;}.plus{color:#2e6b2e;}
+.seg{display:flex;gap:8px;margin:12px 0;}
+.seg button{flex:1;font-size:1.05rem;padding:10px 4px;border:2px solid var(--border);
+background:var(--card);border-radius:10px;cursor:pointer;color:var(--muted);}
+.seg button.on{border-color:var(--accent-deep);background:var(--accent-deep);color:#fff;font-weight:bold;}
+.lvl{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);
+border-radius:10px;padding:10px 12px;margin:8px 0;box-shadow:var(--shadow);}
+.lvl .p{min-width:86px;text-align:center;}
+.lvl .p .usd{font-weight:bold;font-size:1.05rem;}
+.lvl .p .jpy{font-size:.8rem;color:var(--muted);display:block;}
+.lvl .m{flex:1;min-width:0;}
+.lvl .m .nm{font-weight:bold;font-size:.98rem;}
+.lvl .m .nt{font-size:.8rem;color:var(--muted);line-height:1.55;}
+.lvl .r{min-width:108px;text-align:right;}
+.lvl .r .amt{font-weight:bold;font-size:1.02rem;}
+.lvl .r .pct{font-size:.78rem;display:block;}
+.lvl.reach{background:var(--goldbg);border-color:#e6d194;}
+.lvl.you{background:#efe4f4;border:2px solid var(--accent-deep);}
+.lvl.you .nm{color:var(--accent-deep);}
+.lvl.down{opacity:.8;}
+.note{font-size:.88rem;color:var(--muted);margin:10px 2px;}
+.talk{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--accent);
+border-radius:10px;padding:14px 16px;margin:14px 0;font-size:.95rem;box-shadow:var(--shadow);}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--border);
+color:var(--muted);font-size:.76rem;text-align:center;letter-spacing:.05em;}
+</style>
+</head><body><div class="wrap">
+<header class="site"><h1>💎 仮想マダム芦屋会</h1><p>会員限定・特典ライブラリ</p></header>
+
+<h1 class="tool">🧮 XRP売り時シミュレーター</h1>
+<p class="lead">いくらで戻ったら、いくら受け取るか。決めてる人から順に、狼狽から卒業していくのよ。<br>
+あんたの買値と枚数を入れてごらんなさい。<b>売り時の梯子</b>に、あんた専用の答えが灯るわ。</p>
+
+<div class="panel">
+  <label>平均買値 <small>（1枚あたり・円）</small></label>
+  <input type="text" id="buy" inputmode="decimal" placeholder="例: 480">
+  <label>保有枚数 <small>（枚）</small></label>
+  <input type="text" id="qty" inputmode="decimal" placeholder="例: 5000">
+  <button class="btn" id="calc">計算するわよ</button>
+  <p class="now" id="nowline">いまのXRPの値段を確認中…</p>
+  <p class="now">※入れた数字はあんたのスマホの中にしか残らないわ。どこにも送信しないから安心なさい。</p>
+</div>
+
+<div class="stat" id="stat" hidden>
+  <div><span class="k">投資した額</span><br><span class="v" id="s-inv">—</span></div>
+  <div><span class="k">いまの評価額</span><br><span class="v" id="s-now">—</span></div>
+  <div><span class="k">損益</span><br><span class="v" id="s-pl">—</span></div>
+</div>
+
+<h2>売り時の梯子（上の水準）</h2>
+<div class="seg" id="seg">
+  <button data-r="1">全部売ると</button>
+  <button data-r="0.5" class="on">半分売ると</button>
+  <button data-r="0.3">3割売ると</button>
+</div>
+<div id="ladder"></div>
+<p class="note">金色＝あんたの買値より上（利益が出る段）。紫の枠＝あんたの買値の位置。<br>
+水準の根拠は2026年7月時点の相場分析（チャートの節目・大手銀行の目標値）よ。相場が大きく動いたら更新するわ。</p>
+
+<h2>下の心得（慌てないための水準）</h2>
+<div id="downlist"></div>
+<p class="note">仮にここまで来ても「終わりの合図」じゃなく、ふるい落としの範囲という分析が主流よ。
+慌てて投げた人から退場させられるの。最悪シナリオ（0.53ドル）に触れる分析もあるけど、発生確率1割と付記されてるわ。</p>
+
+<div class="talk">
+<b>💡 この道具の使い方</b><br>
+① 上の金色の段から、「この値段になったら◯割」を<b>あんたが</b>決めて、紙に書いて貼っておく。<br>
+② 決めごとを変えるのは月に1回まで。毎晩チャートを睨むのは、もうおしまい。<br>
+③ 売り時はあたしが決めることじゃないの。この梯子で、<b>あんたが決める</b>のよ。
+</div>
+
+<h2>売る前の税金メモ（日本）</h2>
+<div class="talk">
+・利益が出た年は「雑所得」で給与と合算の総合課税（住民税込みで最大約55%）。<br>
+・お勤めの人は、利益が年20万円を超えたら確定申告が要るわ。<br>
+・損した分は翌年に持ち越せない（現行制度）。<br>
+・2028年からは20.315%の分離課税へ変わる方針が公表されてる（まだ確定じゃないわ）。大きく売る年は、税金まで含めて考えなさい。
+</div>
+
+<footer>この道具は情報提供が目的で、特定商品の売買を勧めるものじゃないわ。水準・税制は2026年7月時点の情報で、見立ては外れる可能性がある。投資判断はあんた自身の責任でね。<br>
+このページは仮想マダム芦屋会（公式LINE）の会員限定よ。URLの転載はしないでちょうだい。<br>
+<a href="index.html">← 特典ライブラリ一覧へ</a></footer>
+</div>
+<script>
+var LEVELS=[
+ {usd:1.13,nm:"旧支持帯の奪回",nt:"下で支えだった段。まずここを取り返せるか"},
+ {usd:1.20,nm:"転換ライン",nt:"買い手が主導権を取り戻す最初の合図（1.18〜1.20の帯）"},
+ {usd:1.30,nm:"戻りの関門",nt:"チャートの78.6%戻し。6月に一度はね返された段"},
+ {usd:1.42,nm:"5月の戻り高値",nt:"ここを超えると今年の景色が変わる"},
+ {usd:1.60,nm:"暴落の起点",nt:"2月に崩れた大きなライン。奪回できたら流れは本物"},
+ {usd:2.41,nm:"1月の戻り高値",nt:"2026年の高値。ここからが本格回復の領域"},
+ {usd:2.80,nm:"大手銀行の目標",nt:"スタンダードチャータードの2026年目標（2月改定値）"},
+ {usd:3.40,nm:"2025年1月の高値",nt:"3ドル台の入口。高値掴み組の帰り道"},
+ {usd:3.66,nm:"過去最高値",nt:"2025年7月18日。取引所により3.65〜3.84ドル"},
+ {usd:7.00,nm:"2027年の見立て",nt:"スタンダードチャータード2027年目標（法整備が条件の強気見立て）"}];
+var DOWN=[
+ {usd:1.00,nm:"1ドルの床",nt:"心理的節目。攻防は想定内よ"},
+ {usd:0.90,nm:"二次支持帯",nt:"0.90〜1.00ドルは過去に何度も守られた帯"},
+ {usd:0.80,nm:"リスクオフの目処",nt:"市場全体が崩れた時の下値目処"}];
+var FB={jpy:167,fx:152};           // 自動取得できない時の予備値（2026年7月時点）
+var cur={jpy:FB.jpy,fx:FB.fx,live:false};
+var ratio=0.5;
+
+function z2h(s){return s.replace(/[０-９．]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-0xFEE0);}).replace(/[，,、\s]/g,"");}
+function num(id){var v=parseFloat(z2h(document.getElementById(id).value||""));return isFinite(v)&&v>0?v:null;}
+function yen(n){return n>=1e8?(n/1e8).toFixed(2).replace(/\.?0+$/,"")+"億円":Math.round(n).toLocaleString("ja-JP")+"円";}
+
+function nowline(){
+ var el=document.getElementById("nowline");
+ el.innerHTML="いまのXRP: <b>"+cur.jpy.toLocaleString("ja-JP",{maximumFractionDigits:1})+"円</b>"+
+  "（"+(cur.jpy/cur.fx).toFixed(2)+"ドル換算）"+
+  (cur.live?" — さっき自動で取ってきた値よ":" — 自動取得できなかったから2026年7月時点の目安値を使ってるわ");
+}
+function row(l,qty,buy,extra){
+ var jpyPer=l.usd*cur.fx;
+ var cls="lvl "+(extra||"");
+ if(buy!=null){cls+=jpyPer>=buy?" reach":"";}
+ var right="";
+ if(qty!=null){
+  var amt=jpyPer*qty*ratio;
+  var pct=buy!=null?((jpyPer/buy-1)*100):null;
+  right='<div class="r"><span class="amt">'+yen(amt)+'</span>'+
+   (pct!=null?'<span class="pct '+(pct>=0?"plus":"minus")+'">買値比 '+(pct>=0?"+":"")+pct.toFixed(0)+"%</span>":"")+"</div>";
+ }else{
+  right='<div class="r"><span class="pct">枚数を入れると<br>金額が出るわ</span></div>';
+ }
+ return '<div class="'+cls+'"><div class="p"><span class="usd">'+l.usd.toFixed(2)+'ドル</span>'+
+  '<span class="jpy">約'+Math.round(jpyPer).toLocaleString("ja-JP")+'円/枚</span></div>'+
+  '<div class="m"><span class="nm">'+l.nm+'</span><div class="nt">'+l.nt+'</div></div>'+right+"</div>";
+}
+function render(){
+ var buy=num("buy"),qty=num("qty");
+ var lad=document.getElementById("ladder"),dn=document.getElementById("downlist");
+ var list=LEVELS.slice();
+ if(buy!=null){
+  list.push({usd:buy/cur.fx,nm:"★ あんたの買値",nt:"ここより上の金色の段が、利益の出る売り場よ",you:true});
+  list.sort(function(a,b){return a.usd-b.usd;});
+ }
+ lad.innerHTML=list.map(function(l){return row(l,qty,buy,l.you?"you":"");}).join("");
+ dn.innerHTML=DOWN.map(function(l){return row(l,qty,buy,"down");}).join("");
+ var st=document.getElementById("stat");
+ if(buy!=null&&qty!=null){
+  st.hidden=false;
+  var inv=buy*qty,now=cur.jpy*qty,pl=now-inv;
+  document.getElementById("s-inv").textContent=yen(inv);
+  document.getElementById("s-now").textContent=yen(now);
+  var e=document.getElementById("s-pl");
+  e.textContent=(pl>=0?"+":"−")+yen(Math.abs(pl))+"（"+(pl>=0?"+":"")+((pl/inv)*100).toFixed(0)+"%）";
+  e.className="v "+(pl>=0?"plus":"minus");
+  try{localStorage.setItem("madam_sim",JSON.stringify({b:buy,q:qty}));}catch(e){}
+ }else{st.hidden=true;}
+}
+document.getElementById("calc").addEventListener("click",render);
+["buy","qty"].forEach(function(id){document.getElementById(id).addEventListener("input",render);});
+document.querySelectorAll("#seg button").forEach(function(b){
+ b.addEventListener("click",function(){
+  document.querySelectorAll("#seg button").forEach(function(x){x.classList.remove("on");});
+  b.classList.add("on");ratio=parseFloat(b.getAttribute("data-r"));render();
+ });
+});
+try{var s=JSON.parse(localStorage.getItem("madam_sim")||"null");
+ if(s){document.getElementById("buy").value=s.b;document.getElementById("qty").value=s.q;}}catch(e){}
+nowline();render();
+fetch("https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd,jpy")
+ .then(function(r){return r.json();})
+ .then(function(d){
+  if(d&&d.ripple&&d.ripple.jpy&&d.ripple.usd){
+   cur={jpy:d.ripple.jpy,fx:d.ripple.jpy/d.ripple.usd,live:true};
+   nowline();render();
+  }
+ }).catch(function(){});
+</script>
+</body></html>
